@@ -7,7 +7,7 @@ import org.example.entity.Course;
 import java.util.List;
 
 public class CourseServiceImpl implements CourseService{
-    CourseDao courseDao=new CourseDaoImpl();
+     private final CourseDao courseDao=new CourseDaoImpl();
     @Override
     public String saveCourse(Course course) {
         return courseDao.saveCourse(course);
@@ -25,11 +25,11 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     public List<Course> getAllCourses() {
-        return null;
+        return courseDao.getAllCourses();
     }
 
     @Override
     public String deleteCourse(Long id) {
-        return "";
+        return courseDao.deleteCourse(1L);
     }
 }
